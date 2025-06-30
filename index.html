@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Builder Lengkap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ResumePro</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Templates</a>
+      <a href="#">My Resumes</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <h2>Seksyen</h2>
+      <ul>
+        <li><a href="#personal">Maklumat Diri</a></li>
+        <li><a href="#education">Pendidikan</a></li>
+        <li><a href="#experience">Pengalaman</a></li>
+        <li><a href="#skills">Kemahiran</a></li>
+        <li><a href="#languages">Bahasa</a></li>
+        <li><a href="#references">Rujukan</a></li>
+      </ul>
+    </aside>
+
+    <section class="editor">
+      <h2>Editor Resume Lengkap</h2>
+      <form id="resumeForm">
+        <div id="personal" class="section">
+          <h3>Maklumat Diri</h3>
+          <input type="text" placeholder="Nama Penuh" required>
+          <input type="email" placeholder="Emel" required>
+          <input type="tel" placeholder="No Telefon" required>
+          <input type="text" placeholder="Alamat" required>
+        </div>
+
+        <div id="education" class="section">
+          <h3>Pendidikan</h3>
+          <div class="entry">
+            <input type="text" placeholder="Nama Institusi" required>
+            <input type="text" placeholder="Tahun Tamat">
+            <button type="button" class="remove">Padam</button>
+          </div>
+          <button type="button" class="add" onclick="addEntry('education')">+ Tambah Pendidikan</button>
+        </div>
+
+        <div id="experience" class="section">
+          <h3>Pengalaman Kerja</h3>
+          <div class="entry">
+            <input type="text" placeholder="Jawatan / Syarikat">
+            <input type="text" placeholder="Tempoh (cth: 2022 - 2024)">
+            <button type="button" class="remove">Padam</button>
+          </div>
+          <button type="button" class="add" onclick="addEntry('experience')">+ Tambah Pengalaman</button>
+        </div>
+
+        <div id="skills" class="section">
+          <h3>Kemahiran</h3>
+          <div class="entry">
+            <input type="text" placeholder="Kemahiran (cth: Microsoft Excel)">
+            <button type="button" class="remove">Padam</button>
+          </div>
+          <button type="button" class="add" onclick="addEntry('skills')">+ Tambah Kemahiran</button>
+        </div>
+
+        <div id="languages" class="section">
+          <h3>Bahasa</h3>
+          <div class="entry">
+            <input type="text" placeholder="Bahasa (cth: Bahasa Melayu)">
+            <button type="button" class="remove">Padam</button>
+          </div>
+          <button type="button" class="add" onclick="addEntry('languages')">+ Tambah Bahasa</button>
+        </div>
+
+        <div id="references" class="section">
+          <h3>Rujukan</h3>
+          <div class="entry">
+            <input type="text" placeholder="Nama Rujukan">
+            <input type="text" placeholder="Jawatan / Organisasi">
+            <button type="button" class="remove">Padam</button>
+          </div>
+          <button type="button" class="add" onclick="addEntry('references')">+ Tambah Rujukan</button>
+        </div>
+
+        <div class="actions">
+          <button type="submit">💾 Simpan Resume</button>
+          <button type="button" onclick="downloadPDF()">⬇️ Muat Turun PDF</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="html2pdf.bundle.min.js"></script>
+</body>
+</html>
